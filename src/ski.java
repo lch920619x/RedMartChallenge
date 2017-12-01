@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class ski {
+	//used to search all 4 directions on a giving point
 	public static final int[][] dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
 	public static void main(String[] args) {
@@ -21,14 +22,20 @@ public class ski {
         }
         scan.close();
         
+        //compute maxpath and maxdrop for all points
         for (int i = 0; i<row; i++) {
             for (int j = 0; j<column; j++) {
             	int tmp = computePath(map, path, drop, i, j);
-            	maxDrop = (maxPath <= tmp)? drop[i][j]:maxDrop;
+            	//only update maxDrop if maxpath is updated
+            	if (maxPath == tmp)
+            		maxDrop = Math.max(drop[i][j],maxDrop);
+            	else if (maxPath == tmp)
+            		maxDrop = drop[i][j];
             	maxPath = Math.max(maxPath, tmp);
-
+        
             }
-        }
+         }
+        
         System.out.println(maxPath);
         System.out.println(maxDrop);
         System.out.print("\n");
