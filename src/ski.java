@@ -29,7 +29,7 @@ public class ski {
             	//only update maxDrop if maxpath is updated
             	if (maxPath == tmp)
             		maxDrop = Math.max(drop[i][j],maxDrop);
-            	else if (maxPath == tmp)
+            	else if (maxPath < tmp)
             		maxDrop = drop[i][j];
             	
             	//update maxpath when necessary
@@ -87,6 +87,7 @@ public class ski {
 			}else if (maxPath < len) {
 				maxDrop = map[row][column]-map[y][x]+drop[y][x];
 			}
+
 			
 			//update max path when necessary
 			maxPath = Math.max(maxPath, len);
