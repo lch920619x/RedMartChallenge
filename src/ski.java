@@ -42,7 +42,7 @@ public class ski {
        	for(int j: i)
        		System.out.print(j+" ");
    		System.out.print("\n");
-       }*/
+       }*///
         
 
 
