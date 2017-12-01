@@ -62,7 +62,7 @@ public class ski {
 	
 	//search method for point [row] [column]
 	static int computePath(int[][] map, int[][] path, int[][]drop, int row ,int column) {
-		//check if point has already been checked, if so, direcly return result.
+		//check if point has already been checked, if so, directly return result.
 		if (path[row][column] != 0) 
 			return path[row][column];
 
@@ -81,7 +81,7 @@ public class ski {
 			int len = 1 + computePath(map, path, drop, y, x);
 
 			//update max drop when necessary, take max when new path length = current path length,
-			//change to new number when new path length> current path lenght
+			//change to new number when new path length> current path length
 			if (maxPath == len) {
 				maxDrop = Math.max(map[row][column]-map[y][x]+drop[y][x], maxDrop);
 			}else if (maxPath < len) {
