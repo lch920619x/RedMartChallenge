@@ -31,7 +31,7 @@ public class ski {
         		System.out.print(j+" ");
     		System.out.print("\n");
 <<<<<<< Upstream, based on 32
-        }/*/
+        }/*///
 
 
         
